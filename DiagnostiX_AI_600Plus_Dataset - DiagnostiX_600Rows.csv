@@ -1,0 +1,601 @@
+Device,Age_Months,Daily_Usage_Hours,Failure_After_Months,Usage_Type,Symptom1,Symptom2,Symptom3,Faulty_Component
+Laptop,22,9,16,Developer,Overheating,Fan Noise,Auto Shutdown,Cooling Fan
+Desktop,16,14,16,Developer,High Temperature,Fan Error,Shutdown,CPU Fan
+Laptop,77,2,74,Student,Charging Failure,Adapter Fault,Power Fluctuation,Charger
+Desktop,83,3,81,Developer,Thermal Warning,Loud Noise,Heating,CPU Fan
+Desktop,61,8,58,Gaming,Overheating,Fan Not Spinning,Auto Shutdown,CPU Fan
+Mobile,10,10,6,Gaming,Distorted Audio,Low Volume,Calls OK,Speaker
+Desktop,28,6,20,Student,Restart Issues,Power Failure,No Boot,PSU
+Mobile,84,8,80,Office,No Sound,Calls OK,Headphones Work,Speaker
+Laptop,63,7,63,Office,Lines On Screen,Display Lag,Power ON,Display
+Laptop,46,3,38,Gaming,Overheating,Fan Noise,Auto Shutdown,Cooling Fan
+Desktop,62,13,61,Normal,Long Loading Time,Disk Health Alert,Lagging,SSD
+Desktop,58,5,57,Normal,Game Crashes,Visual Glitches,High GPU Temp,GPU
+Mobile,27,4,26,Gaming,Distorted Audio,Low Volume,Calls OK,Speaker
+Desktop,65,7,64,Normal,Overheating,Fan Not Spinning,Auto Shutdown,CPU Fan
+Mobile,63,11,57,Normal,Not Charging,Cable OK,Battery OK,Charging IC
+Desktop,37,15,37,Office,File Corruption,Boot Failure,Disk Warning,SSD
+Mobile,75,9,67,Office,Cable Moves Loosely,Charging Stops,Slow Charging,Charging Port
+Desktop,75,16,70,Student,POST Failure,Beep Sound,Power ON,RAM
+Mobile,32,2,29,Developer,Recording Failure,Low Mic Volume,Calls Connected,Microphone
+Desktop,43,3,35,Developer,Restart Issues,Power Failure,No Boot,PSU
+Desktop,30,3,28,Student,POST Failure,Beep Sound,Power ON,RAM
+Desktop,64,14,61,Office,USB Failure,Random Freeze,No POST,Motherboard
+Desktop,66,16,59,Developer,Game Crashes,Visual Glitches,High GPU Temp,GPU
+Laptop,57,9,53,Business,High Temperature,Fan Slow,Random Shutdown,Cooling Fan
+Desktop,54,6,53,Business,System Off Suddenly,Burn Smell,Power Loss,PSU
+Mobile,66,16,62,Gaming,Flickering Screen,Lines On Screen,Touch OK,Display
+Desktop,63,3,58,Normal,Thermal Warning,Loud Noise,Heating,CPU Fan
+Mobile,36,7,30,Office,Loose Connection,Slow Charging,Intermittent Charging,Charging Port
+Mobile,75,4,72,Normal,Voice Breaks,Recorder Not Working,Calls Connected,Microphone
+Mobile,39,8,38,Business,Crackling Sound,Media Playback Issue,Calls OK,Speaker
+Mobile,47,12,47,Developer,No Sound,Calls OK,Headphones Work,Speaker
+Desktop,23,14,15,Student,Peripheral Failure,Boot Error,Power ON,Motherboard
+Mobile,40,13,37,Normal,Cable Moves Loosely,Charging Stops,Slow Charging,Charging Port
+Laptop,24,2,19,Normal,Random Crashes,Blue Screen,Memory Warning,RAM
+Laptop,72,12,65,Developer,Storage Not Detected,Boot Failure,BIOS Error,SSD
+Mobile,62,1,55,Business,Fast Battery Drain,Heating,Random Shutdown,Battery
+Laptop,47,7,46,Business,Overheating,Fan Noise,Auto Shutdown,Cooling Fan
+Desktop,68,16,61,Office,Peripheral Failure,Boot Error,Power ON,Motherboard
+Desktop,10,7,3,Business,Peripheral Failure,Boot Error,Power ON,Motherboard
+Mobile,44,16,43,Gaming,Poor Backup,Battery Swelling,Heating,Battery
+Mobile,44,8,42,Developer,Charging Failure,Heating,Random Restart,Charging IC
+Desktop,14,8,9,Student,Slow Startup,Disk Errors,Storage Not Detected,SSD
+Desktop,23,2,16,Business,Restart Issues,Power Failure,No Boot,PSU
+Desktop,73,16,73,Normal,No Display,Artifacts,System Running,GPU
+Laptop,55,3,54,Normal,Overheating,Fan Noise,Auto Shutdown,Cooling Fan
+Desktop,83,5,83,Business,Long Loading Time,Disk Health Alert,Lagging,SSD
+Mobile,12,12,6,Office,No Display,Touch Working,Notifications Audible,Display
+Laptop,21,9,20,Business,Application Lag,Disk Warning,Slow Performance,SSD
+Mobile,17,3,15,Gaming,Fast Battery Drain,Heating,Random Shutdown,Battery
+Laptop,78,12,71,Developer,Application Lag,Disk Warning,Slow Performance,SSD
+Mobile,70,11,64,Student,Voice Breaks,Recorder Not Working,Calls Connected,Microphone
+Laptop,18,4,12,Student,Boot Loop,Memory Error,Beep Code,RAM
+Mobile,84,1,83,Business,No Charge,Adapter OK,Battery Healthy,Charging IC
+Desktop,72,9,64,Gaming,Thermal Warning,Loud Noise,Heating,CPU Fan
+Desktop,64,2,58,Developer,Random Restart,Memory Warning,System Freeze,RAM
+Mobile,6,15,6,Gaming,Voice Not Reaching,Calls Connected,Speaker OK,Microphone
+Mobile,9,13,8,Business,No Charge,Adapter OK,Battery Healthy,Charging IC
+Desktop,39,5,38,Normal,Thermal Warning,Loud Noise,Heating,CPU Fan
+Mobile,38,8,36,Student,Loose Connection,Slow Charging,Intermittent Charging,Charging Port
+Mobile,79,9,79,Developer,Distorted Audio,Low Volume,Calls OK,Speaker
+Desktop,22,5,20,Developer,File Corruption,Boot Failure,Disk Warning,SSD
+Desktop,66,4,64,Developer,USB Failure,Random Freeze,No POST,Motherboard
+Mobile,80,2,79,Student,Not Charging,Adapter OK,Cable OK,Charging Port
+Desktop,10,15,5,Gaming,No Boot,Beep Code,Memory Error,RAM
+Desktop,53,4,49,Office,System Off Suddenly,Burn Smell,Power Loss,PSU
+Desktop,70,7,63,Student,Random Shutdown,No Power,Power Fluctuation,PSU
+Desktop,63,6,58,Gaming,Thermal Warning,Loud Noise,Heating,CPU Fan
+Desktop,41,8,41,Normal,Restart Issues,Power Failure,No Boot,PSU
+Desktop,24,2,18,Student,Long Loading Time,Disk Health Alert,Lagging,SSD
+Desktop,25,2,21,Developer,POST Failure,Beep Sound,Power ON,RAM
+Laptop,35,9,32,Normal,High Temperature,Fan Slow,Random Shutdown,Cooling Fan
+Desktop,6,12,1,Normal,POST Failure,Beep Sound,Power ON,RAM
+Mobile,30,10,26,Normal,Not Charging,Adapter OK,Cable OK,Charging Port
+Mobile,73,14,71,Office,No Charge,Adapter OK,Battery Healthy,Charging IC
+Desktop,51,5,46,Normal,Long Loading Time,Disk Health Alert,Lagging,SSD
+Mobile,62,9,56,Business,Loose Connection,Slow Charging,Intermittent Charging,Charging Port
+Desktop,14,5,11,Normal,USB Failure,Random Freeze,No POST,Motherboard
+Desktop,48,7,46,Student,Slow Startup,Disk Errors,Storage Not Detected,SSD
+Desktop,55,1,49,Student,Random Restart,Memory Warning,System Freeze,RAM
+Mobile,48,8,45,Office,Voice Breaks,Recorder Not Working,Calls Connected,Microphone
+Mobile,16,10,8,Gaming,No Display,Touch Working,Notifications Audible,Display
+Desktop,75,6,70,Office,POST Failure,Beep Sound,Power ON,RAM
+Mobile,27,8,25,Gaming,Voice Not Reaching,Calls Connected,Speaker OK,Microphone
+Laptop,75,16,70,Business,Thermal Throttling,Loud Fan,Heating,Cooling Fan
+Laptop,11,16,6,Developer,Rapid Discharge,Heating,Low Backup,Battery
+Mobile,43,7,38,Office,Charging Failure,Heating,Random Restart,Charging IC
+Desktop,77,14,69,Student,Long Loading Time,Disk Health Alert,Lagging,SSD
+Laptop,47,1,44,Business,Boot Loop,Memory Error,Beep Code,RAM
+Laptop,41,13,36,Office,Screen Flicker,System Running,External Monitor OK,Display
+Desktop,56,13,50,Student,High Temperature,Fan Error,Shutdown,CPU Fan
+Mobile,29,3,24,Gaming,Voice Breaks,Recorder Not Working,Calls Connected,Microphone
+Mobile,27,12,23,Normal,Recording Failure,Low Mic Volume,Calls Connected,Microphone
+Mobile,80,7,72,Business,Crackling Sound,Media Playback Issue,Calls OK,Speaker
+Laptop,17,1,10,Normal,Lines On Screen,Display Lag,Power ON,Display
+Desktop,20,5,16,Normal,Game Crashes,Visual Glitches,High GPU Temp,GPU
+Desktop,60,1,55,Office,Restart Issues,Power Failure,No Boot,PSU
+Mobile,44,2,40,Gaming,Charging Failure,Heating,Random Restart,Charging IC
+Mobile,23,9,21,Developer,Not Charging,Adapter OK,Cable OK,Charging Port
+Mobile,73,10,70,Developer,No Display,Touch Working,Notifications Audible,Display
+Laptop,18,14,12,Developer,Rapid Discharge,Heating,Low Backup,Battery
+Laptop,45,13,40,Gaming,No Charge,Battery OK,Power Adapter Error,Charger
+Mobile,84,9,82,Gaming,Charging Failure,Heating,Random Restart,Charging IC
+Laptop,49,12,42,Gaming,Thermal Throttling,Loud Fan,Heating,Cooling Fan
+Mobile,6,10,5,Developer,Fast Battery Drain,Heating,Random Shutdown,Battery
+Desktop,9,12,3,Office,Restart Issues,Power Failure,No Boot,PSU
+Mobile,23,6,22,Gaming,Battery Drops Quickly,Overheating,Lagging,Battery
+Desktop,6,14,5,Business,Slow Startup,Disk Errors,Storage Not Detected,SSD
+Desktop,48,14,46,Office,Random Shutdown,No Power,Power Fluctuation,PSU
+Desktop,80,3,76,Office,Long Loading Time,Disk Health Alert,Lagging,SSD
+Mobile,67,4,64,Business,Flickering Screen,Lines On Screen,Touch OK,Display
+Desktop,14,5,8,Developer,POST Failure,Beep Sound,Power ON,RAM
+Desktop,77,3,69,Gaming,Slow Startup,Disk Errors,Storage Not Detected,SSD
+Desktop,31,6,26,Office,Restart Issues,Power Failure,No Boot,PSU
+Mobile,77,11,75,Student,Recording Failure,Low Mic Volume,Calls Connected,Microphone
+Laptop,22,1,16,Normal,Battery Drain,Low Backup,Not Charging,Battery
+Laptop,34,16,34,Developer,Screen Flicker,System Running,External Monitor OK,Display
+Mobile,79,3,75,Student,Fast Battery Drain,Heating,Random Shutdown,Battery
+Desktop,83,5,78,Developer,Overheating,Fan Not Spinning,Auto Shutdown,CPU Fan
+Laptop,47,2,41,Gaming,Slow Startup,Disk Errors,File Corruption,SSD
+Laptop,52,13,51,Gaming,Random Crashes,Blue Screen,Memory Warning,RAM
+Desktop,18,14,13,Business,Screen Flicker,Driver Crashes,Artifacts,GPU
+Mobile,39,13,34,Developer,Loose Connection,Slow Charging,Intermittent Charging,Charging Port
+Laptop,59,12,56,Gaming,Slow Startup,Disk Errors,File Corruption,SSD
+Laptop,60,7,59,Developer,Thermal Throttling,Loud Fan,Heating,Cooling Fan
+Desktop,78,13,76,Normal,No POST,Power LED ON,No Boot,Motherboard
+Mobile,49,4,49,Office,No Charge,Adapter OK,Battery Healthy,Charging IC
+Mobile,20,14,13,Office,Distorted Audio,Low Volume,Calls OK,Speaker
+Laptop,30,4,22,Developer,Boot Loop,Memory Error,Beep Code,RAM
+Desktop,44,1,42,Gaming,Screen Flicker,Driver Crashes,Artifacts,GPU
+Laptop,54,1,46,Business,Random Crashes,Blue Screen,Memory Warning,RAM
+Laptop,19,4,12,Normal,Battery Drain,Low Backup,Not Charging,Battery
+Mobile,55,7,49,Student,Recording Failure,Low Mic Volume,Calls Connected,Microphone
+Desktop,6,5,6,Normal,No Boot,Beep Code,Memory Error,RAM
+Mobile,41,8,33,Business,Distorted Audio,Low Volume,Calls OK,Speaker
+Laptop,72,7,64,Student,Charging Failure,Adapter Fault,Power Fluctuation,Charger
+Laptop,35,16,34,Business,No Boot,Beep Sound,Power LED ON,RAM
+Desktop,18,1,18,Developer,Long Loading Time,Disk Health Alert,Lagging,SSD
+Desktop,64,9,61,Business,Game Crashes,Visual Glitches,High GPU Temp,GPU
+Mobile,63,10,58,Office,Fast Battery Drain,Heating,Random Shutdown,Battery
+Mobile,61,2,54,Student,Voice Breaks,Recorder Not Working,Calls Connected,Microphone
+Laptop,84,12,80,Normal,Overheating,Fan Noise,Auto Shutdown,Cooling Fan
+Desktop,13,4,11,Developer,Restart Issues,Power Failure,No Boot,PSU
+Desktop,37,9,31,Student,Game Crashes,Visual Glitches,High GPU Temp,GPU
+Desktop,77,13,76,Developer,Slow Startup,Disk Errors,Storage Not Detected,SSD
+Mobile,31,7,28,Gaming,Not Charging,Cable OK,Battery OK,Charging IC
+Desktop,17,4,9,Gaming,Thermal Warning,Loud Noise,Heating,CPU Fan
+Desktop,26,7,26,Gaming,Game Crashes,Visual Glitches,High GPU Temp,GPU
+Desktop,62,1,58,Normal,POST Failure,Beep Sound,Power ON,RAM
+Desktop,60,4,55,Normal,Random Restart,Memory Warning,System Freeze,RAM
+Desktop,82,15,75,Student,Game Crashes,Visual Glitches,High GPU Temp,GPU
+Mobile,50,13,47,Business,Recording Failure,Low Mic Volume,Calls Connected,Microphone
+Mobile,53,13,45,Developer,Battery Drops Quickly,Overheating,Lagging,Battery
+Desktop,77,6,71,Student,Game Crashes,Visual Glitches,High GPU Temp,GPU
+Desktop,80,2,72,Developer,Random Shutdown,No Power,Power Fluctuation,PSU
+Desktop,28,14,23,Developer,Screen Flicker,Driver Crashes,Artifacts,GPU
+Desktop,61,13,57,Student,System Off Suddenly,Burn Smell,Power Loss,PSU
+Desktop,19,16,14,Business,No Display,Artifacts,System Running,GPU
+Mobile,78,15,75,Business,Voice Breaks,Recorder Not Working,Calls Connected,Microphone
+Mobile,9,14,4,Office,Cable Moves Loosely,Charging Stops,Slow Charging,Charging Port
+Mobile,30,11,28,Business,Crackling Sound,Media Playback Issue,Calls OK,Speaker
+Laptop,57,16,50,Gaming,Random Crashes,Blue Screen,Memory Warning,RAM
+Desktop,11,6,8,Student,No Boot,Beep Code,Memory Error,RAM
+Desktop,82,4,75,Developer,Random Shutdown,No Power,Power Fluctuation,PSU
+Desktop,29,2,22,Business,Peripheral Failure,Boot Error,Power ON,Motherboard
+Mobile,49,15,47,Normal,Poor Backup,Battery Swelling,Heating,Battery
+Mobile,79,6,71,Office,Distorted Audio,Low Volume,Calls OK,Speaker
+Laptop,38,9,35,Office,No Display,External Monitor Works,Power ON,Display
+Desktop,42,14,41,Gaming,Screen Flicker,Driver Crashes,Artifacts,GPU
+Desktop,17,10,12,Normal,Random Restart,Memory Warning,System Freeze,RAM
+Desktop,37,14,35,Student,Random Shutdown,No Power,Power Fluctuation,PSU
+Mobile,60,14,59,Normal,Black Screen,Phone Vibrates,Calls Received,Display
+Laptop,36,11,30,Developer,No Boot,Beep Sound,Power LED ON,RAM
+Laptop,62,10,59,Normal,Slow Startup,Disk Errors,File Corruption,SSD
+Mobile,44,7,43,Student,Poor Backup,Battery Swelling,Heating,Battery
+Mobile,37,11,30,Student,No Display,Touch Working,Notifications Audible,Display
+Desktop,58,9,58,Developer,Long Loading Time,Disk Health Alert,Lagging,SSD
+Laptop,36,12,35,Student,Charging Failure,Adapter Fault,Power Fluctuation,Charger
+Laptop,9,14,6,Gaming,Boot Loop,Memory Error,Beep Code,RAM
+Mobile,71,10,65,Developer,Not Charging,Cable OK,Battery OK,Charging IC
+Desktop,31,7,31,Office,POST Failure,Beep Sound,Power ON,RAM
+Laptop,39,9,38,Developer,Storage Not Detected,Boot Failure,BIOS Error,SSD
+Desktop,26,4,24,Student,Slow Startup,Disk Errors,Storage Not Detected,SSD
+Laptop,61,8,55,Developer,Portable Use Failure,Battery Low,Charger OK,Battery
+Desktop,46,12,46,Office,No POST,Power LED ON,No Boot,Motherboard
+Mobile,70,3,63,Developer,Battery Drops Quickly,Overheating,Lagging,Battery
+Desktop,58,11,52,Developer,USB Failure,Random Freeze,No POST,Motherboard
+Laptop,66,4,65,Student,No Charge,Battery OK,Power Adapter Error,Charger
+Mobile,22,16,20,Business,Not Charging,Cable OK,Battery OK,Charging IC
+Mobile,28,16,22,Gaming,Fast Battery Drain,Heating,Random Shutdown,Battery
+Laptop,18,1,11,Normal,No Boot,Beep Sound,Power LED ON,RAM
+Mobile,26,1,25,Developer,Loose Connection,Slow Charging,Intermittent Charging,Charging Port
+Desktop,58,6,55,Business,No Display,Artifacts,System Running,GPU
+Laptop,49,9,46,Business,Lines On Screen,Display Lag,Power ON,Display
+Desktop,76,4,69,Developer,Slow Startup,Disk Errors,Storage Not Detected,SSD
+Laptop,32,10,31,Gaming,Slow Startup,Disk Errors,File Corruption,SSD
+Desktop,23,3,16,Business,Random Shutdown,No Power,Power Fluctuation,PSU
+Desktop,42,2,36,Student,Random Restart,Memory Warning,System Freeze,RAM
+Mobile,29,3,25,Office,Flickering Screen,Lines On Screen,Touch OK,Display
+Mobile,39,7,33,Student,No Sound,Calls OK,Headphones Work,Speaker
+Mobile,64,12,62,Normal,Loose Connection,Slow Charging,Intermittent Charging,Charging Port
+Laptop,66,2,60,Student,Slow Startup,Disk Errors,File Corruption,SSD
+Laptop,40,9,38,Developer,Portable Use Failure,Battery Low,Charger OK,Battery
+Mobile,82,4,75,Developer,Cable Moves Loosely,Charging Stops,Slow Charging,Charging Port
+Mobile,26,5,20,Student,Flickering Screen,Lines On Screen,Touch OK,Display
+Desktop,19,9,16,Business,USB Failure,Random Freeze,No POST,Motherboard
+Laptop,15,8,15,Gaming,Storage Not Detected,Boot Failure,BIOS Error,SSD
+Desktop,33,12,28,Developer,Slow Startup,Disk Errors,Storage Not Detected,SSD
+Mobile,48,16,48,Student,No Sound,Calls OK,Headphones Work,Speaker
+Laptop,16,10,13,Office,Lines On Screen,Display Lag,Power ON,Display
+Desktop,82,1,77,Student,Random Restart,Memory Warning,System Freeze,RAM
+Mobile,18,12,12,Normal,Not Charging,Cable OK,Battery OK,Charging IC
+Mobile,74,13,69,Normal,No Display,Touch Working,Notifications Audible,Display
+Desktop,33,1,27,Business,No Display,Artifacts,System Running,GPU
+Laptop,33,5,32,Normal,Boot Loop,Memory Error,Beep Code,RAM
+Desktop,65,1,63,Business,Overheating,Fan Not Spinning,Auto Shutdown,CPU Fan
+Laptop,58,5,56,Office,Rapid Discharge,Heating,Low Backup,Battery
+Mobile,19,12,13,Office,No Charge,Adapter OK,Battery Healthy,Charging IC
+Mobile,54,10,52,Developer,Fast Battery Drain,Heating,Random Shutdown,Battery
+Desktop,83,11,80,Normal,Long Loading Time,Disk Health Alert,Lagging,SSD
+Desktop,62,10,55,Business,Random Shutdown,No Power,Power Fluctuation,PSU
+Desktop,51,11,44,Gaming,Restart Issues,Power Failure,No Boot,PSU
+Laptop,16,12,13,Business,Battery Drain,Low Backup,Not Charging,Battery
+Laptop,19,16,17,Business,High Temperature,Fan Slow,Random Shutdown,Cooling Fan
+Laptop,59,1,59,Student,Random Crashes,Blue Screen,Memory Warning,RAM
+Desktop,63,6,59,Normal,Random Shutdown,No Power,Power Fluctuation,PSU
+Desktop,44,11,43,Developer,No Display,Artifacts,System Running,GPU
+Desktop,13,16,5,Normal,Slow Startup,Disk Errors,Storage Not Detected,SSD
+Mobile,56,2,53,Normal,Crackling Sound,Media Playback Issue,Calls OK,Speaker
+Mobile,72,10,70,Office,Voice Not Reaching,Calls Connected,Speaker OK,Microphone
+Desktop,21,13,19,Gaming,Random Restart,Memory Warning,System Freeze,RAM
+Mobile,77,14,75,Gaming,Flickering Screen,Lines On Screen,Touch OK,Display
+Mobile,80,15,75,Office,Cable Moves Loosely,Charging Stops,Slow Charging,Charging Port
+Mobile,23,11,16,Business,Not Charging,Adapter OK,Cable OK,Charging Port
+Desktop,59,14,51,Business,Game Crashes,Visual Glitches,High GPU Temp,GPU
+Mobile,11,15,5,Gaming,Not Charging,Adapter OK,Cable OK,Charging Port
+Desktop,38,13,32,Gaming,System Off Suddenly,Burn Smell,Power Loss,PSU
+Mobile,11,6,8,Normal,Charging Failure,Heating,Random Restart,Charging IC
+Desktop,63,1,55,Developer,No POST,Power LED ON,No Boot,Motherboard
+Desktop,34,11,27,Gaming,POST Failure,Beep Sound,Power ON,RAM
+Laptop,25,12,23,Gaming,No Boot,Beep Sound,Power LED ON,RAM
+Mobile,18,15,13,Student,Voice Breaks,Recorder Not Working,Calls Connected,Microphone
+Mobile,12,1,7,Student,Recording Failure,Low Mic Volume,Calls Connected,Microphone
+Laptop,66,6,60,Student,Random Crashes,Blue Screen,Memory Warning,RAM
+Desktop,36,2,35,Office,File Corruption,Boot Failure,Disk Warning,SSD
+Laptop,15,13,14,Student,High Temperature,Fan Slow,Random Shutdown,Cooling Fan
+Mobile,15,8,10,Gaming,Charging Failure,Heating,Random Restart,Charging IC
+Laptop,71,13,64,Developer,Overheating,Fan Noise,Auto Shutdown,Cooling Fan
+Desktop,6,5,1,Developer,Thermal Warning,Loud Noise,Heating,CPU Fan
+Desktop,42,11,42,Gaming,No Display,Artifacts,System Running,GPU
+Laptop,17,4,12,Office,Rapid Discharge,Heating,Low Backup,Battery
+Laptop,77,4,77,Business,No Boot,Beep Sound,Power LED ON,RAM
+Mobile,20,13,17,Business,No Charge,Adapter OK,Battery Healthy,Charging IC
+Laptop,9,8,8,Gaming,Loose Adapter,Intermittent Charging,Battery OK,Charger
+Laptop,39,12,35,Office,Battery Drain,Low Backup,Not Charging,Battery
+Laptop,28,4,24,Business,No Boot,Beep Sound,Power LED ON,RAM
+Desktop,40,12,40,Business,No POST,Power LED ON,No Boot,Motherboard
+Desktop,10,4,3,Gaming,No Boot,Beep Code,Memory Error,RAM
+Laptop,34,10,27,Normal,Thermal Throttling,Loud Fan,Heating,Cooling Fan
+Mobile,53,9,47,Business,Loose Connection,Slow Charging,Intermittent Charging,Charging Port
+Mobile,78,2,76,Normal,Not Charging,Cable OK,Battery OK,Charging IC
+Desktop,45,15,42,Business,System Off Suddenly,Burn Smell,Power Loss,PSU
+Laptop,25,12,24,Normal,Boot Loop,Memory Error,Beep Code,RAM
+Desktop,70,5,69,Business,No Boot,Beep Code,Memory Error,RAM
+Desktop,68,16,65,Normal,No Display,Artifacts,System Running,GPU
+Mobile,74,9,74,Normal,Voice Not Reaching,Calls Connected,Speaker OK,Microphone
+Mobile,28,8,28,Student,Charging Failure,Heating,Random Restart,Charging IC
+Desktop,18,3,17,Gaming,Random Restart,Memory Warning,System Freeze,RAM
+Laptop,12,7,11,Developer,No Display,External Monitor Works,Power ON,Display
+Laptop,66,16,58,Office,Thermal Throttling,Loud Fan,Heating,Cooling Fan
+Desktop,83,1,81,Student,Thermal Warning,Loud Noise,Heating,CPU Fan
+Laptop,44,5,42,Developer,Boot Loop,Memory Error,Beep Code,RAM
+Desktop,75,16,72,Gaming,Restart Issues,Power Failure,No Boot,PSU
+Desktop,7,2,5,Office,Overheating,Fan Not Spinning,Auto Shutdown,CPU Fan
+Desktop,9,1,8,Normal,Random Shutdown,No Power,Power Fluctuation,PSU
+Desktop,80,2,80,Gaming,System Off Suddenly,Burn Smell,Power Loss,PSU
+Mobile,29,3,25,Student,Poor Backup,Battery Swelling,Heating,Battery
+Mobile,81,15,75,Business,Distorted Audio,Low Volume,Calls OK,Speaker
+Desktop,69,13,63,Normal,System Off Suddenly,Burn Smell,Power Loss,PSU
+Mobile,20,4,19,Business,Fast Battery Drain,Heating,Random Shutdown,Battery
+Laptop,19,14,14,Developer,Battery Drain,Low Backup,Not Charging,Battery
+Mobile,70,1,70,Student,Cable Moves Loosely,Charging Stops,Slow Charging,Charging Port
+Laptop,46,2,41,Office,High Temperature,Fan Slow,Random Shutdown,Cooling Fan
+Mobile,24,15,22,Normal,Recording Failure,Low Mic Volume,Calls Connected,Microphone
+Mobile,29,2,22,Developer,Poor Backup,Battery Swelling,Heating,Battery
+Laptop,73,4,73,Student,Loose Adapter,Intermittent Charging,Battery OK,Charger
+Mobile,80,14,74,Normal,Battery Drops Quickly,Overheating,Lagging,Battery
+Mobile,29,11,28,Developer,Battery Drops Quickly,Overheating,Lagging,Battery
+Mobile,65,14,63,Normal,Distorted Audio,Low Volume,Calls OK,Speaker
+Laptop,31,6,23,Developer,Charging Failure,Adapter Fault,Power Fluctuation,Charger
+Mobile,79,7,75,Student,Recording Failure,Low Mic Volume,Calls Connected,Microphone
+Mobile,35,12,28,Gaming,Battery Drops Quickly,Overheating,Lagging,Battery
+Mobile,14,5,11,Office,Loose Connection,Slow Charging,Intermittent Charging,Charging Port
+Laptop,32,9,32,Developer,No Boot,Beep Sound,Power LED ON,RAM
+Laptop,53,6,52,Developer,Thermal Throttling,Loud Fan,Heating,Cooling Fan
+Mobile,43,9,39,Developer,No Display,Touch Working,Notifications Audible,Display
+Mobile,69,15,67,Developer,Distorted Audio,Low Volume,Calls OK,Speaker
+Mobile,37,12,31,Developer,No Charge,Adapter OK,Battery Healthy,Charging IC
+Desktop,33,11,25,Business,File Corruption,Boot Failure,Disk Warning,SSD
+Laptop,12,3,7,Business,Rapid Discharge,Heating,Low Backup,Battery
+Desktop,48,3,42,Developer,System Off Suddenly,Burn Smell,Power Loss,PSU
+Mobile,9,14,1,Normal,Not Charging,Adapter OK,Cable OK,Charging Port
+Desktop,50,3,48,Office,POST Failure,Beep Sound,Power ON,RAM
+Mobile,8,11,1,Developer,No Charge,Adapter OK,Battery Healthy,Charging IC
+Desktop,50,12,50,Student,No Boot,Beep Code,Memory Error,RAM
+Desktop,58,14,55,Student,Peripheral Failure,Boot Error,Power ON,Motherboard
+Laptop,29,14,29,Gaming,Boot Loop,Memory Error,Beep Code,RAM
+Laptop,72,7,71,Developer,Loose Adapter,Intermittent Charging,Battery OK,Charger
+Desktop,40,6,35,Office,Peripheral Failure,Boot Error,Power ON,Motherboard
+Mobile,83,16,83,Office,Voice Not Reaching,Calls Connected,Speaker OK,Microphone
+Mobile,82,3,79,Developer,No Display,Touch Working,Notifications Audible,Display
+Laptop,38,10,36,Office,Thermal Throttling,Loud Fan,Heating,Cooling Fan
+Laptop,70,16,68,Normal,Lines On Screen,Display Lag,Power ON,Display
+Desktop,46,3,39,Developer,Random Shutdown,No Power,Power Fluctuation,PSU
+Laptop,58,12,56,Normal,Rapid Discharge,Heating,Low Backup,Battery
+Laptop,44,14,41,Developer,Portable Use Failure,Battery Low,Charger OK,Battery
+Mobile,26,15,20,Business,Poor Backup,Battery Swelling,Heating,Battery
+Desktop,64,9,62,Normal,Random Restart,Memory Warning,System Freeze,RAM
+Mobile,12,5,5,Business,Recording Failure,Low Mic Volume,Calls Connected,Microphone
+Desktop,21,4,21,Office,Random Shutdown,No Power,Power Fluctuation,PSU
+Desktop,59,5,56,Business,Peripheral Failure,Boot Error,Power ON,Motherboard
+Mobile,46,5,42,Developer,Distorted Audio,Low Volume,Calls OK,Speaker
+Desktop,54,16,47,Business,No Display,Artifacts,System Running,GPU
+Mobile,23,14,16,Developer,No Display,Touch Working,Notifications Audible,Display
+Laptop,82,11,76,Developer,No Charge,Battery OK,Power Adapter Error,Charger
+Mobile,42,15,39,Developer,Not Charging,Adapter OK,Cable OK,Charging Port
+Desktop,51,8,51,Business,Random Restart,Memory Warning,System Freeze,RAM
+Mobile,72,10,67,Student,Voice Breaks,Recorder Not Working,Calls Connected,Microphone
+Laptop,77,4,75,Normal,High Temperature,Fan Slow,Random Shutdown,Cooling Fan
+Desktop,66,15,63,Normal,Long Loading Time,Disk Health Alert,Lagging,SSD
+Laptop,69,2,64,Student,Storage Not Detected,Boot Failure,BIOS Error,SSD
+Mobile,31,1,27,Developer,No Charge,Adapter OK,Battery Healthy,Charging IC
+Desktop,7,4,1,Gaming,Random Shutdown,No Power,Power Fluctuation,PSU
+Mobile,73,8,65,Developer,Cable Moves Loosely,Charging Stops,Slow Charging,Charging Port
+Mobile,10,6,9,Developer,Black Screen,Phone Vibrates,Calls Received,Display
+Laptop,70,3,63,Gaming,Application Lag,Disk Warning,Slow Performance,SSD
+Mobile,58,14,54,Normal,Not Charging,Cable OK,Battery OK,Charging IC
+Mobile,34,1,33,Office,Black Screen,Phone Vibrates,Calls Received,Display
+Laptop,22,10,17,Gaming,Slow Startup,Disk Errors,File Corruption,SSD
+Mobile,61,8,56,Normal,Battery Drops Quickly,Overheating,Lagging,Battery
+Desktop,19,1,15,Normal,System Off Suddenly,Burn Smell,Power Loss,PSU
+Desktop,62,2,61,Student,Overheating,Fan Not Spinning,Auto Shutdown,CPU Fan
+Desktop,33,2,31,Office,Long Loading Time,Disk Health Alert,Lagging,SSD
+Desktop,7,12,1,Office,Peripheral Failure,Boot Error,Power ON,Motherboard
+Laptop,21,15,17,Student,Lines On Screen,Display Lag,Power ON,Display
+Laptop,59,3,51,Business,Loose Adapter,Intermittent Charging,Battery OK,Charger
+Laptop,29,7,23,Developer,Application Lag,Disk Warning,Slow Performance,SSD
+Laptop,84,10,78,Normal,No Boot,Beep Sound,Power LED ON,RAM
+Mobile,7,4,2,Gaming,Voice Breaks,Recorder Not Working,Calls Connected,Microphone
+Desktop,16,8,12,Office,Random Shutdown,No Power,Power Fluctuation,PSU
+Laptop,62,13,58,Developer,Application Lag,Disk Warning,Slow Performance,SSD
+Desktop,46,12,40,Business,Restart Issues,Power Failure,No Boot,PSU
+Desktop,40,4,39,Business,Game Crashes,Visual Glitches,High GPU Temp,GPU
+Laptop,20,14,20,Office,Charging Failure,Adapter Fault,Power Fluctuation,Charger
+Mobile,78,13,71,Business,Distorted Audio,Low Volume,Calls OK,Speaker
+Mobile,16,8,14,Business,Battery Drops Quickly,Overheating,Lagging,Battery
+Mobile,53,7,52,Normal,Fast Battery Drain,Heating,Random Shutdown,Battery
+Mobile,73,6,71,Gaming,Voice Not Reaching,Calls Connected,Speaker OK,Microphone
+Mobile,76,15,68,Gaming,Charging Failure,Heating,Random Restart,Charging IC
+Desktop,41,5,36,Office,Game Crashes,Visual Glitches,High GPU Temp,GPU
+Mobile,36,15,29,Normal,Flickering Screen,Lines On Screen,Touch OK,Display
+Desktop,22,3,15,Normal,Slow Startup,Disk Errors,Storage Not Detected,SSD
+Mobile,39,12,39,Gaming,Loose Connection,Slow Charging,Intermittent Charging,Charging Port
+Mobile,62,15,54,Normal,Not Charging,Cable OK,Battery OK,Charging IC
+Desktop,70,13,67,Student,No Boot,Beep Code,Memory Error,RAM
+Desktop,50,5,46,Normal,Overheating,Fan Not Spinning,Auto Shutdown,CPU Fan
+Mobile,31,3,24,Gaming,No Display,Touch Working,Notifications Audible,Display
+Mobile,24,10,23,Office,Recording Failure,Low Mic Volume,Calls Connected,Microphone
+Laptop,57,5,56,Gaming,No Charge,Battery OK,Power Adapter Error,Charger
+Desktop,79,2,79,Business,No Boot,Beep Code,Memory Error,RAM
+Mobile,34,11,29,Office,Not Charging,Adapter OK,Cable OK,Charging Port
+Laptop,15,15,8,Business,Slow Startup,Disk Errors,File Corruption,SSD
+Mobile,63,9,59,Normal,Not Charging,Adapter OK,Cable OK,Charging Port
+Laptop,35,15,30,Student,Screen Flicker,System Running,External Monitor OK,Display
+Mobile,80,8,79,Business,Not Charging,Cable OK,Battery OK,Charging IC
+Desktop,31,9,26,Student,Game Crashes,Visual Glitches,High GPU Temp,GPU
+Laptop,33,14,28,Office,Screen Flicker,System Running,External Monitor OK,Display
+Laptop,82,5,74,Gaming,Portable Use Failure,Battery Low,Charger OK,Battery
+Mobile,64,4,61,Normal,Poor Backup,Battery Swelling,Heating,Battery
+Desktop,78,13,77,Business,Random Shutdown,No Power,Power Fluctuation,PSU
+Laptop,52,12,50,Student,Random Crashes,Blue Screen,Memory Warning,RAM
+Desktop,12,6,9,Business,Screen Flicker,Driver Crashes,Artifacts,GPU
+Mobile,76,11,68,Gaming,Loose Connection,Slow Charging,Intermittent Charging,Charging Port
+Mobile,31,11,28,Gaming,Flickering Screen,Lines On Screen,Touch OK,Display
+Desktop,65,2,58,Student,File Corruption,Boot Failure,Disk Warning,SSD
+Desktop,41,4,35,Gaming,File Corruption,Boot Failure,Disk Warning,SSD
+Mobile,83,8,75,Gaming,Poor Backup,Battery Swelling,Heating,Battery
+Desktop,19,3,13,Gaming,No Display,Artifacts,System Running,GPU
+Desktop,24,13,20,Business,POST Failure,Beep Sound,Power ON,RAM
+Laptop,57,5,57,Student,Slow Startup,Disk Errors,File Corruption,SSD
+Laptop,63,9,56,Developer,Rapid Discharge,Heating,Low Backup,Battery
+Desktop,33,14,26,Developer,POST Failure,Beep Sound,Power ON,RAM
+Desktop,55,6,54,Developer,System Off Suddenly,Burn Smell,Power Loss,PSU
+Mobile,70,5,63,Student,Not Charging,Adapter OK,Cable OK,Charging Port
+Desktop,40,3,36,Student,Random Shutdown,No Power,Power Fluctuation,PSU
+Laptop,20,1,20,Gaming,High Temperature,Fan Slow,Random Shutdown,Cooling Fan
+Mobile,69,11,66,Gaming,Loose Connection,Slow Charging,Intermittent Charging,Charging Port
+Desktop,64,6,63,Office,Overheating,Fan Not Spinning,Auto Shutdown,CPU Fan
+Laptop,52,16,45,Developer,Battery Drain,Low Backup,Not Charging,Battery
+Mobile,68,12,68,Office,Not Charging,Cable OK,Battery OK,Charging IC
+Laptop,18,1,14,Normal,Portable Use Failure,Battery Low,Charger OK,Battery
+Mobile,40,15,38,Student,Not Charging,Cable OK,Battery OK,Charging IC
+Mobile,63,8,63,Developer,Voice Breaks,Recorder Not Working,Calls Connected,Microphone
+Desktop,69,16,68,Developer,Random Restart,Memory Warning,System Freeze,RAM
+Desktop,79,7,71,Office,POST Failure,Beep Sound,Power ON,RAM
+Mobile,22,8,17,Normal,Crackling Sound,Media Playback Issue,Calls OK,Speaker
+Laptop,46,5,38,Gaming,High Temperature,Fan Slow,Random Shutdown,Cooling Fan
+Desktop,61,16,55,Normal,No Boot,Beep Code,Memory Error,RAM
+Mobile,20,8,18,Business,Recording Failure,Low Mic Volume,Calls Connected,Microphone
+Desktop,58,9,50,Gaming,POST Failure,Beep Sound,Power ON,RAM
+Laptop,31,12,28,Business,Boot Loop,Memory Error,Beep Code,RAM
+Laptop,74,5,67,Business,Charging Failure,Adapter Fault,Power Fluctuation,Charger
+Mobile,17,15,16,Business,Distorted Audio,Low Volume,Calls OK,Speaker
+Laptop,19,2,17,Office,No Boot,Beep Sound,Power LED ON,RAM
+Desktop,11,16,4,Normal,No Display,Artifacts,System Running,GPU
+Laptop,39,15,32,Gaming,Charging Failure,Adapter Fault,Power Fluctuation,Charger
+Desktop,16,6,8,Developer,File Corruption,Boot Failure,Disk Warning,SSD
+Desktop,38,2,38,Office,Random Restart,Memory Warning,System Freeze,RAM
+Mobile,35,14,27,Developer,No Charge,Adapter OK,Battery Healthy,Charging IC
+Laptop,57,1,54,Developer,Portable Use Failure,Battery Low,Charger OK,Battery
+Laptop,60,13,54,Student,Loose Adapter,Intermittent Charging,Battery OK,Charger
+Laptop,36,12,29,Business,Thermal Throttling,Loud Fan,Heating,Cooling Fan
+Desktop,50,15,49,Student,USB Failure,Random Freeze,No POST,Motherboard
+Laptop,44,5,41,Office,High Temperature,Fan Slow,Random Shutdown,Cooling Fan
+Laptop,53,10,47,Developer,No Boot,Beep Sound,Power LED ON,RAM
+Laptop,36,15,35,Business,Rapid Discharge,Heating,Low Backup,Battery
+Laptop,20,15,13,Normal,No Boot,Beep Sound,Power LED ON,RAM
+Laptop,74,8,68,Developer,High Temperature,Fan Slow,Random Shutdown,Cooling Fan
+Mobile,7,9,7,Office,Poor Backup,Battery Swelling,Heating,Battery
+Mobile,17,14,14,Gaming,No Charge,Adapter OK,Battery Healthy,Charging IC
+Mobile,27,10,20,Office,Battery Drops Quickly,Overheating,Lagging,Battery
+Laptop,41,10,34,Business,Application Lag,Disk Warning,Slow Performance,SSD
+Mobile,7,15,2,Student,Fast Battery Drain,Heating,Random Shutdown,Battery
+Desktop,65,5,65,Developer,Long Loading Time,Disk Health Alert,Lagging,SSD
+Laptop,63,9,56,Student,High Temperature,Fan Slow,Random Shutdown,Cooling Fan
+Mobile,45,2,39,Business,Cable Moves Loosely,Charging Stops,Slow Charging,Charging Port
+Laptop,36,8,32,Office,Thermal Throttling,Loud Fan,Heating,Cooling Fan
+Desktop,20,13,16,Office,Restart Issues,Power Failure,No Boot,PSU
+Mobile,77,7,71,Normal,Battery Drops Quickly,Overheating,Lagging,Battery
+Desktop,12,14,6,Business,No Display,Artifacts,System Running,GPU
+Mobile,68,8,60,Student,Distorted Audio,Low Volume,Calls OK,Speaker
+Laptop,32,15,30,Gaming,Random Crashes,Blue Screen,Memory Warning,RAM
+Mobile,28,4,21,Business,No Sound,Calls OK,Headphones Work,Speaker
+Laptop,33,4,33,Student,No Charge,Battery OK,Power Adapter Error,Charger
+Laptop,75,12,70,Office,Loose Adapter,Intermittent Charging,Battery OK,Charger
+Mobile,78,16,74,Developer,No Sound,Calls OK,Headphones Work,Speaker
+Mobile,74,13,72,Office,Crackling Sound,Media Playback Issue,Calls OK,Speaker
+Desktop,58,5,50,Normal,Thermal Warning,Loud Noise,Heating,CPU Fan
+Desktop,25,7,22,Normal,No POST,Power LED ON,No Boot,Motherboard
+Mobile,81,16,79,Normal,Cable Moves Loosely,Charging Stops,Slow Charging,Charging Port
+Desktop,16,4,12,Gaming,POST Failure,Beep Sound,Power ON,RAM
+Desktop,25,12,25,Developer,Long Loading Time,Disk Health Alert,Lagging,SSD
+Laptop,16,12,8,Normal,No Boot,Beep Sound,Power LED ON,RAM
+Desktop,72,15,71,Developer,File Corruption,Boot Failure,Disk Warning,SSD
+Laptop,20,9,13,Student,No Boot,Beep Sound,Power LED ON,RAM
+Mobile,29,15,26,Business,Charging Failure,Heating,Random Restart,Charging IC
+Laptop,65,11,61,Student,No Charge,Battery OK,Power Adapter Error,Charger
+Laptop,76,14,72,Office,Loose Adapter,Intermittent Charging,Battery OK,Charger
+Laptop,17,14,12,Developer,No Display,External Monitor Works,Power ON,Display
+Laptop,35,4,35,Business,Application Lag,Disk Warning,Slow Performance,SSD
+Desktop,53,5,51,Student,Random Restart,Memory Warning,System Freeze,RAM
+Laptop,31,9,29,Office,Storage Not Detected,Boot Failure,BIOS Error,SSD
+Desktop,80,4,75,Gaming,File Corruption,Boot Failure,Disk Warning,SSD
+Mobile,16,1,14,Gaming,Charging Failure,Heating,Random Restart,Charging IC
+Mobile,34,13,27,Developer,Black Screen,Phone Vibrates,Calls Received,Display
+Desktop,45,10,45,Gaming,Random Shutdown,No Power,Power Fluctuation,PSU
+Laptop,8,12,2,Student,High Temperature,Fan Slow,Random Shutdown,Cooling Fan
+Mobile,46,5,39,Gaming,Not Charging,Cable OK,Battery OK,Charging IC
+Desktop,45,10,41,Gaming,Screen Flicker,Driver Crashes,Artifacts,GPU
+Desktop,14,12,7,Office,Random Restart,Memory Warning,System Freeze,RAM
+Mobile,83,9,78,Developer,Crackling Sound,Media Playback Issue,Calls OK,Speaker
+Mobile,30,11,26,Developer,Loose Connection,Slow Charging,Intermittent Charging,Charging Port
+Laptop,60,3,55,Office,No Display,External Monitor Works,Power ON,Display
+Laptop,72,5,70,Normal,Slow Startup,Disk Errors,File Corruption,SSD
+Laptop,40,12,39,Normal,Lines On Screen,Display Lag,Power ON,Display
+Desktop,60,15,59,Office,Game Crashes,Visual Glitches,High GPU Temp,GPU
+Laptop,56,12,51,Gaming,Overheating,Fan Noise,Auto Shutdown,Cooling Fan
+Mobile,74,4,69,Office,Charging Failure,Heating,Random Restart,Charging IC
+Mobile,76,16,68,Student,Recording Failure,Low Mic Volume,Calls Connected,Microphone
+Laptop,78,11,71,Normal,No Charge,Battery OK,Power Adapter Error,Charger
+Mobile,29,1,28,Normal,Fast Battery Drain,Heating,Random Shutdown,Battery
+Laptop,80,6,80,Normal,Slow Startup,Disk Errors,File Corruption,SSD
+Laptop,44,15,43,Normal,Storage Not Detected,Boot Failure,BIOS Error,SSD
+Laptop,63,12,55,Student,Screen Flicker,System Running,External Monitor OK,Display
+Desktop,67,3,63,Developer,File Corruption,Boot Failure,Disk Warning,SSD
+Desktop,8,8,3,Gaming,File Corruption,Boot Failure,Disk Warning,SSD
+Mobile,40,16,37,Developer,Flickering Screen,Lines On Screen,Touch OK,Display
+Desktop,50,14,50,Developer,No Display,Artifacts,System Running,GPU
+Laptop,69,10,65,Student,Rapid Discharge,Heating,Low Backup,Battery
+Mobile,81,10,80,Gaming,Recording Failure,Low Mic Volume,Calls Connected,Microphone
+Desktop,40,16,33,Business,Random Shutdown,No Power,Power Fluctuation,PSU
+Laptop,82,8,79,Gaming,High Temperature,Fan Slow,Random Shutdown,Cooling Fan
+Desktop,8,4,3,Business,High Temperature,Fan Error,Shutdown,CPU Fan
+Laptop,70,7,63,Gaming,Application Lag,Disk Warning,Slow Performance,SSD
+Laptop,20,4,20,Student,Battery Drain,Low Backup,Not Charging,Battery
+Mobile,31,6,27,Gaming,Fast Battery Drain,Heating,Random Shutdown,Battery
+Mobile,62,4,60,Developer,Not Charging,Cable OK,Battery OK,Charging IC
+Desktop,29,1,25,Student,Restart Issues,Power Failure,No Boot,PSU
+Laptop,12,9,12,Developer,Application Lag,Disk Warning,Slow Performance,SSD
+Laptop,70,12,69,Normal,Battery Drain,Low Backup,Not Charging,Battery
+Desktop,48,13,41,Normal,Game Crashes,Visual Glitches,High GPU Temp,GPU
+Desktop,15,4,8,Student,File Corruption,Boot Failure,Disk Warning,SSD
+Mobile,24,9,23,Business,Cable Moves Loosely,Charging Stops,Slow Charging,Charging Port
+Mobile,66,11,63,Developer,Black Screen,Phone Vibrates,Calls Received,Display
+Desktop,65,16,59,Normal,Peripheral Failure,Boot Error,Power ON,Motherboard
+Mobile,32,16,27,Gaming,Crackling Sound,Media Playback Issue,Calls OK,Speaker
+Desktop,27,10,26,Business,USB Failure,Random Freeze,No POST,Motherboard
+Desktop,35,11,35,Developer,Long Loading Time,Disk Health Alert,Lagging,SSD
+Laptop,21,1,16,Business,Application Lag,Disk Warning,Slow Performance,SSD
+Laptop,58,11,58,Developer,High Temperature,Fan Slow,Random Shutdown,Cooling Fan
+Mobile,77,12,70,Gaming,Recording Failure,Low Mic Volume,Calls Connected,Microphone
+Desktop,13,4,9,Office,High Temperature,Fan Error,Shutdown,CPU Fan
+Desktop,46,10,43,Developer,Slow Startup,Disk Errors,Storage Not Detected,SSD
+Desktop,6,12,2,Normal,Overheating,Fan Not Spinning,Auto Shutdown,CPU Fan
+Desktop,70,8,69,Developer,Restart Issues,Power Failure,No Boot,PSU
+Laptop,62,1,59,Gaming,Slow Startup,Disk Errors,File Corruption,SSD
+Laptop,25,11,23,Normal,Thermal Throttling,Loud Fan,Heating,Cooling Fan
+Desktop,6,16,4,Business,Game Crashes,Visual Glitches,High GPU Temp,GPU
+Mobile,51,7,51,Office,Crackling Sound,Media Playback Issue,Calls OK,Speaker
+Laptop,25,7,18,Business,Screen Flicker,System Running,External Monitor OK,Display
+Desktop,20,15,13,Gaming,Thermal Warning,Loud Noise,Heating,CPU Fan
+Mobile,26,2,23,Developer,Loose Connection,Slow Charging,Intermittent Charging,Charging Port
+Desktop,84,2,78,Gaming,Long Loading Time,Disk Health Alert,Lagging,SSD
+Desktop,66,4,58,Gaming,Game Crashes,Visual Glitches,High GPU Temp,GPU
+Desktop,48,1,40,Office,High Temperature,Fan Error,Shutdown,CPU Fan
+Laptop,11,8,4,Business,Rapid Discharge,Heating,Low Backup,Battery
+Desktop,66,13,62,Developer,Random Restart,Memory Warning,System Freeze,RAM
+Laptop,22,8,17,Normal,Storage Not Detected,Boot Failure,BIOS Error,SSD
+Desktop,48,16,43,Office,Restart Issues,Power Failure,No Boot,PSU
+Desktop,11,9,6,Business,Thermal Warning,Loud Noise,Heating,CPU Fan
+Mobile,58,7,56,Normal,Not Charging,Adapter OK,Cable OK,Charging Port
+Desktop,28,15,24,Office,Overheating,Fan Not Spinning,Auto Shutdown,CPU Fan
+Laptop,76,4,71,Developer,Overheating,Fan Noise,Auto Shutdown,Cooling Fan
+Desktop,71,10,71,Office,Game Crashes,Visual Glitches,High GPU Temp,GPU
+Desktop,58,14,55,Normal,Long Loading Time,Disk Health Alert,Lagging,SSD
+Laptop,64,4,62,Office,No Charge,Battery OK,Power Adapter Error,Charger
+Laptop,19,16,13,Student,Storage Not Detected,Boot Failure,BIOS Error,SSD
+Desktop,29,11,21,Normal,Long Loading Time,Disk Health Alert,Lagging,SSD
+Laptop,33,1,33,Gaming,Rapid Discharge,Heating,Low Backup,Battery
+Laptop,39,1,36,Student,Charging Failure,Adapter Fault,Power Fluctuation,Charger
+Mobile,6,10,1,Developer,Distorted Audio,Low Volume,Calls OK,Speaker
+Laptop,45,11,41,Normal,Charging Failure,Adapter Fault,Power Fluctuation,Charger
+Laptop,32,3,28,Normal,No Display,External Monitor Works,Power ON,Display
+Laptop,82,14,77,Gaming,No Display,External Monitor Works,Power ON,Display
+Mobile,41,10,40,Developer,Loose Connection,Slow Charging,Intermittent Charging,Charging Port
+Desktop,33,15,30,Gaming,POST Failure,Beep Sound,Power ON,RAM
+Laptop,39,15,33,Student,High Temperature,Fan Slow,Random Shutdown,Cooling Fan
+Laptop,52,15,51,Normal,Storage Not Detected,Boot Failure,BIOS Error,SSD
+Laptop,27,15,27,Student,No Boot,Beep Sound,Power LED ON,RAM
+Laptop,70,12,62,Student,Loose Adapter,Intermittent Charging,Battery OK,Charger
+Mobile,28,13,20,Gaming,Poor Backup,Battery Swelling,Heating,Battery
+Desktop,71,11,68,Developer,Restart Issues,Power Failure,No Boot,PSU
+Laptop,72,4,68,Normal,Rapid Discharge,Heating,Low Backup,Battery
+Desktop,6,13,1,Student,USB Failure,Random Freeze,No POST,Motherboard
+Laptop,68,2,61,Developer,Lines On Screen,Display Lag,Power ON,Display
+Laptop,10,13,4,Business,Portable Use Failure,Battery Low,Charger OK,Battery
+Laptop,29,12,26,Gaming,Portable Use Failure,Battery Low,Charger OK,Battery
+Laptop,27,12,23,Normal,No Boot,Beep Sound,Power LED ON,RAM
+Laptop,7,3,4,Gaming,Random Crashes,Blue Screen,Memory Warning,RAM
+Laptop,56,14,52,Normal,Storage Not Detected,Boot Failure,BIOS Error,SSD
+Desktop,83,4,79,Gaming,No POST,Power LED ON,No Boot,Motherboard
+Laptop,30,13,26,Developer,Application Lag,Disk Warning,Slow Performance,SSD
+Laptop,37,15,34,Student,No Boot,Beep Sound,Power LED ON,RAM
+Desktop,16,5,11,Student,Random Restart,Memory Warning,System Freeze,RAM
+Laptop,71,14,66,Normal,Thermal Throttling,Loud Fan,Heating,Cooling Fan
+Mobile,80,16,78,Normal,Fast Battery Drain,Heating,Random Shutdown,Battery
+Laptop,34,3,28,Office,Loose Adapter,Intermittent Charging,Battery OK,Charger
+Desktop,67,6,67,Business,Slow Startup,Disk Errors,Storage Not Detected,SSD
+Desktop,53,6,50,Normal,Thermal Warning,Loud Noise,Heating,CPU Fan
+Desktop,27,12,21,Office,System Off Suddenly,Burn Smell,Power Loss,PSU
+Mobile,27,1,19,Office,Black Screen,Phone Vibrates,Calls Received,Display
+Laptop,48,16,48,Student,Slow Startup,Disk Errors,File Corruption,SSD
+Desktop,75,3,71,Business,No POST,Power LED ON,No Boot,Motherboard
+Laptop,38,10,35,Student,Loose Adapter,Intermittent Charging,Battery OK,Charger
+Mobile,21,12,15,Developer,Fast Battery Drain,Heating,Random Shutdown,Battery
+Desktop,11,10,9,Business,Game Crashes,Visual Glitches,High GPU Temp,GPU
+Mobile,50,15,48,Normal,No Display,Touch Working,Notifications Audible,Display
+Laptop,80,3,75,Office,Screen Flicker,System Running,External Monitor OK,Display
+Laptop,82,11,76,Gaming,Overheating,Fan Noise,Auto Shutdown,Cooling Fan
+Desktop,28,5,21,Office,Screen Flicker,Driver Crashes,Artifacts,GPU
+Laptop,47,14,45,Gaming,Charging Failure,Adapter Fault,Power Fluctuation,Charger
+Mobile,74,3,67,Office,Charging Failure,Heating,Random Restart,Charging IC
+Laptop,54,15,49,Normal,No Boot,Beep Sound,Power LED ON,RAM
+Mobile,11,12,9,Student,Voice Breaks,Recorder Not Working,Calls Connected,Microphone
+Desktop,69,3,68,Business,USB Failure,Random Freeze,No POST,Motherboard
+Mobile,21,2,15,Office,No Sound,Calls OK,Headphones Work,Speaker
+Desktop,24,15,17,Gaming,No Boot,Beep Code,Memory Error,RAM
+Desktop,22,10,14,Office,Thermal Warning,Loud Noise,Heating,CPU Fan
+Laptop,35,9,33,Gaming,Thermal Throttling,Loud Fan,Heating,Cooling Fan
+Mobile,60,10,57,Student,Charging Failure,Heating,Random Restart,Charging IC
+Mobile,38,3,30,Developer,Voice Not Reaching,Calls Connected,Speaker OK,Microphone
+Mobile,76,7,71,Office,Not Charging,Adapter OK,Cable OK,Charging Port
+Laptop,61,10,55,Office,Screen Flicker,System Running,External Monitor OK,Display
+Mobile,76,9,71,Gaming,Battery Drops Quickly,Overheating,Lagging,Battery
+Desktop,37,9,32,Office,Overheating,Fan Not Spinning,Auto Shutdown,CPU Fan
+Mobile,82,9,81,Student,Flickering Screen,Lines On Screen,Touch OK,Display
+Laptop,48,11,43,Business,Overheating,Fan Noise,Auto Shutdown,Cooling Fan
+Laptop,64,5,58,Office,Application Lag,Disk Warning,Slow Performance,SSD
+Mobile,14,5,12,Student,Not Charging,Adapter OK,Cable OK,Charging Port
+Mobile,32,7,25,Student,No Sound,Calls OK,Headphones Work,Speaker
+Desktop,68,2,64,Developer,Peripheral Failure,Boot Error,Power ON,Motherboard
