@@ -1,7 +1,25 @@
 import streamlit as st
 import pickle
+st.set_page_config(
+    page_title="DiagnostiX AI",
+    page_icon="🛠️",
+    layout="wide"
+)
+st.markdown("""
+# 🤖 DiagnostiX AI
 
-st.title("DiagnostiX AI")
+### Smart Electronic Device Fault Prediction System
+
+Predict faulty components in Mobile, Laptop and Desktop devices using Machine Learning.
+
+---
+""")
+
+with st.sidebar:
+    st.header("📊 Device Info")
+    st.write("DiagnostiX AI v1.0")
+    st.write("Built with Python, Streamlit & Machine Learning")
+
 st.subheader("Electronic Device Fault Prediction")
 
 # Inputs
