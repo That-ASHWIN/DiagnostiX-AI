@@ -94,17 +94,15 @@ if predict_btn:
         st.markdown("## 📊 Prediction Results")
         st.info(f"📟 Predicted Fault Code: {prediction[0]}")
 
-            # Load encoder
-            try:
-                fault_encoder = pickle.load(open("fault_encoder.pkl", "rb"))
+                  try:
+        fault_encoder = pickle.load(open("fault_encoder.pkl", "rb"))
 
-                fault_name = fault_encoder.inverse_transform(prediction)
+        fault_name = fault_encoder.inverse_transform(prediction)
 
-            st.success(f"🛠 Faulty Component: {fault_name[0]}")
+        st.success(f"🛠️ Faulty Component: {fault_name[0]}")
         st.balloons()
 
-            except Exception as e:
-                st.error(f"Encoder Error: {e}")
-            st.markdown("---")
+    except Exception as e:
+        st.error(f"Encoder Error: {e}")
 st.markdown("---")
 st.markdown("Made by Ashwin Dubey | DiagnostiX AI 🚀")
