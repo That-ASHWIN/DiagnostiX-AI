@@ -1,96 +1,141 @@
+from pathlib import Path
+import pickle
+
 import pandas as pd
+from sklearn.compose import ColumnTransformer
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import OneHotEncoder
 
-# Load dataset
-df = pd.read_csv("DiagnostiX_AI_600Plus_Dataset - DiagnostiX_600Rows.csv")
 
-print("=== First 5 Rows ===")
-print(df.head())
+BASE_DIR = Path(__file__).resolve().parent
+DATA_PATH = BASE_DIR / "DiagnostiX_AI_600Plus_Dataset - DiagnostiX_600Rows.csv"
+MODEL_PATH = BASE_DIR / "model.pkl"
 
-print("\n=== Dataset Shape ===")
-print(df.shape)
-
-print("\n=== Column Names ===")
-print(df.columns.tolist())
-
-print("\n=== Missing Values ===")
-print(df.isnull().sum())
-from sklearn.preprocessing import LabelEncoder
-
-encoders = {}
-
-categorical_columns = [
+TARGET = "Faulty_Component"
+FEATURE_COLUMNS = [
+    "Device",
+    "Age_Months",
+    "Daily_Usage_Hours",
+    "Failure_After_Months",
+    "Usage_Type",
+    "Symptom1",
+    "Symptom2",
+    "Symptom3",
+]
+CATEGORICAL_FEATURES = [
     "Device",
     "Usage_Type",
     "Symptom1",
     "Symptom2",
     "Symptom3",
-    "Faulty_Component"
+]
+NUMERIC_FEATURES = [
+    "Age_Months",
+    "Daily_Usage_Hours",
+    "Failure_After_Months",
 ]
 
-for col in categorical_columns:
-    le = LabelEncoder()
-    df[col] = le.fit_transform(df[col])
-    encoders[col] = le
 
-print("\n=== Encoded Data ===")
-print(df.head())
-from sklearn.model_selection import train_test_split
+def load_dataset(path=DATA_PATH):
+    df = pd.read_csv(path)
+    required_columns = set(FEATURE_COLUMNS + [TARGET])
+    missing_columns = required_columns.difference(df.columns)
 
-# Features (input)
-X = df.drop("Faulty_Component", axis=1)
+    if missing_columns:
+        missing = ", ".join(sorted(missing_columns))
+        raise ValueError(f"Dataset is missing required columns: {missing}")
+    if df[list(required_columns)].isnull().any().any():
+        raise ValueError("Dataset contains missing values in required columns")
 
-# Target (output)
-y = df["Faulty_Component"]
+    return df
 
-X_train, X_test, y_train, y_test = train_test_split(
-    X,
-    y,
-    test_size=0.2,
-    random_state=42
-)
 
-print("\nTraining Data Shape:", X_train.shape)
-print("Testing Data Shape:", X_test.shape)
-from sklearn.ensemble import RandomForestClassifier
+def build_pipeline():
+    preprocessor = ColumnTransformer(
+        transformers=[
+            (
+                "categorical",
+                OneHotEncoder(handle_unknown="ignore"),
+                CATEGORICAL_FEATURES,
+            ),
+            ("numeric", "passthrough", NUMERIC_FEATURES),
+        ]
+    )
 
-model = RandomForestClassifier(
-    n_estimators=100,
-    random_state=42
-)
+    classifier = RandomForestClassifier(
+        n_estimators=300,
+        class_weight="balanced",
+        random_state=42,
+        n_jobs=-1,
+    )
 
-model.fit(X_train, y_train)
+    return Pipeline(
+        steps=[
+            ("preprocessor", preprocessor),
+            ("classifier", classifier),
+        ]
+    )
 
-print("\nModel Training Complete!")
-from sklearn.metrics import accuracy_score
 
-predictions = model.predict(X_test)
+def build_input_options(df):
+    symptom_combinations_by_device = {}
+    for device in sorted(df["Device"].unique()):
+        device_rows = df[df["Device"] == device]
+        combinations = device_rows[
+            ["Symptom1", "Symptom2", "Symptom3"]
+        ].drop_duplicates()
+        symptom_combinations_by_device[device] = combinations.to_dict(
+            orient="records"
+        )
 
-accuracy = accuracy_score(y_test, predictions)
+    return {
+        "devices": sorted(df["Device"].unique().tolist()),
+        "usage_types": sorted(df["Usage_Type"].unique().tolist()),
+        "symptom_combinations_by_device": symptom_combinations_by_device,
+    }
 
-print("\nAccuracy:", accuracy * 100, "%")
-# Sample prediction
 
-sample_data = [[
-    1,   # Device (Mobile)
-    24,  # Age_Months
-    8,   # Daily_Usage_Hours
-    22,  # Failure_After_Months
-    1,   # Usage_Type
-    24,  # Symptom1
-    23,  # Symptom2
-    1    # Symptom3
-]]
+def train_and_save(data_path=DATA_PATH, model_path=MODEL_PATH):
+    df = load_dataset(data_path)
+    X = df[FEATURE_COLUMNS]
+    y = df[TARGET]
 
-prediction = model.predict(sample_data)
+    X_train, X_test, y_train, y_test = train_test_split(
+        X,
+        y,
+        test_size=0.2,
+        random_state=42,
+        stratify=y,
+    )
 
-print("\nPrediction Code:", prediction[0])
+    evaluation_model = build_pipeline()
+    evaluation_model.fit(X_train, y_train)
+    test_accuracy = evaluation_model.score(X_test, y_test)
 
-fault_name = encoders["Faulty_Component"].inverse_transform(prediction)
+    final_model = build_pipeline()
+    final_model.fit(X, y)
 
-print("Predicted Faulty Component:", fault_name[0])
-import pickle
+    artifact = {
+        "artifact_version": 2,
+        "model": final_model,
+        "feature_columns": FEATURE_COLUMNS,
+        "input_options": build_input_options(df),
+        "metrics": {
+            "test_accuracy": test_accuracy,
+            "training_rows": len(df),
+        },
+    }
 
-pickle.dump(model, open("model.pkl", "wb"))
-pickle.dump(encoders["Faulty_Component"],
-            open("fault_encoder.pkl", "wb"))
-print("Model Saved Successfully!")
+    with model_path.open("wb") as model_file:
+        pickle.dump(artifact, model_file)
+
+    return artifact
+
+
+if __name__ == "__main__":
+    trained_artifact = train_and_save()
+    accuracy = trained_artifact["metrics"]["test_accuracy"]
+    print(f"Model saved to {MODEL_PATH}")
+    print(f"Holdout accuracy: {accuracy:.2%}")

@@ -36,22 +36,34 @@ An AI-powered Electronic Device Fault Prediction System built using Python, Stre
 DiagnostiX-AI/
 │
 ├── app.py
+├── diagnosis.py
 ├── train.py
 ├── model.pkl
-├── fault_encoder.pkl
+├── tests/
 ├── requirements.txt
 ├── README.md
-└── Dataset.csv
+└── DiagnostiX_AI_600Plus_Dataset - DiagnostiX_600Rows.csv
 ```
 
-## 🎯 Future Improvements
+## Run Locally
 
-- Real symptom encoding
-- Confidence score prediction
-- Interactive charts and graphs
-- PDF report generation
-- Prediction history
-- Advanced dashboard analytics
+```bash
+pip install -r requirements.txt
+python train.py
+streamlit run app.py
+```
+
+The saved model includes categorical preprocessing, input options, and the
+classifier in one artifact. Run `python train.py` whenever the dataset changes.
+
+## Prediction Inputs
+
+- Device type and age
+- Daily usage and usage type
+- Month when the problem started
+- Three observed symptoms
+
+The app displays the most likely component, confidence, and two alternatives.
 
 ---
 
@@ -67,6 +79,3 @@ ECE Student | Chandigarh University
 Email:-cuniversity223@gmail.com
 GitHub:- https://github.com/That-ASHWIN
 LinkedIn:-https://www.linkedin.com/in/ashwin-dubey-b27657302/
-
-
-
