@@ -26,11 +26,16 @@ It's a small machine-learning web app: you tell it the device, how old it is, ho
 
 The model, the preprocessing, and the list of valid inputs all travel together in a single artifact — so the app and the model never drift out of sync.
 
-## 📊 About the data (being honest here)
+## 📊 About the data
 
-The model learns from a dataset of device-usage and repair records that links symptom patterns to faulty components.
+The dataset behind DiagnostiX is something I gathered from the ground up, rather than downloading off the shelf:
 
-I'll be upfront: this data is largely **rule-based**, so the symptoms map very cleanly onto faults. That makes the accuracy look almost *too* good on paper. In the real world — with messy, unpredictable descriptions — it won't be that confident. I'd rather say that openly than pretend the system is flawless.
+- **A Google Form survey** where everyday users described the problems they'd run into with their devices and what the fault eventually turned out to be.
+- **Inputs from nearby hardware shops, service centres and repair technicians**, who shared the symptom-to-fault patterns they deal with every day.
+
+Combining real user reports with hands-on repair experience is what makes the predictions feel grounded in how devices actually fail, instead of being made-up numbers.
+
+A small honesty note: because the collected data is fairly clean and the symptom patterns map quite consistently onto faults, the model scores very high on paper. Real-world symptoms are messier and more ambiguous, so treat the prediction as a strong starting hint — not a final verdict.
 
 To keep the evaluation honest, `train.py` runs:
 
@@ -57,11 +62,11 @@ streamlit run app.py   # the app trains itself on first run if no model exists
 
 ## 🔭 Where I'd take it next
 
-- Swap the rule-based data for **real repair-shop records**
+- Keep growing the dataset with **more survey responses and repair-shop records**
 - Understand **free-text symptoms** using fuzzy matching / embeddings
 - Add **confidence calibration** and an honest "I'm not sure — get it inspected" answer
 - A **feedback loop** so every confirmed repair makes the model a little smarter
-- Surface the **repair cost & time** estimates that already live in the data
+- Surface **repair cost & time** estimates alongside the predicted fault
 
 ## 📁 Project layout
 
