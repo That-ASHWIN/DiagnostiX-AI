@@ -55,37 +55,32 @@ NUMERIC_FEATURES = [
 ]
 REQUIRED_COLUMNS = FEATURE_COLUMNS + [TARGET]
 
-# Datasets we look for first, in order of preference.
-PREFERRED_DATASETS = [
-    "DiagnostiX_DeepLearning_Dataset.csv",
-    "DiagnostiX_AI_600Plus_Dataset - DiagnostiX_600Rows.csv",
-]
-
 
 def resolve_data_path():
     """Locate the training dataset.
 
-    Prefers the known dataset names, otherwise picks the first CSV in the
-    project folder that contains every required column. This keeps training
-    working even if the dataset file is renamed or re-uploaded.
+    Picks the largest CSV in the project folder that contains every required
+    column. Choosing the largest valid file means the full dataset is used
+    even if it was renamed or re-uploaded (for example with a "(1)" suffix),
+    while still falling back to the smaller sample dataset when that is the
+    only file present.
     """
-    for name in PREFERRED_DATASETS:
-        candidate = BASE_DIR / name
-        if candidate.exists():
-            return candidate
-
+    valid_datasets = []
     for candidate in sorted(BASE_DIR.glob("*.csv")):
         try:
             header = pd.read_csv(candidate, nrows=1)
         except Exception:
             continue
         if set(REQUIRED_COLUMNS).issubset(header.columns):
-            return candidate
+            valid_datasets.append(candidate)
 
-    raise FileNotFoundError(
-        "No dataset CSV found. Add a CSV that contains the columns: "
-        + ", ".join(REQUIRED_COLUMNS)
-    )
+    if not valid_datasets:
+        raise FileNotFoundError(
+            "No dataset CSV found. Add a CSV that contains the columns: "
+            + ", ".join(REQUIRED_COLUMNS)
+        )
+
+    return max(valid_datasets, key=lambda path: path.stat().st_size)
 
 
 def load_dataset(path=None):
