@@ -32,8 +32,9 @@ The dataset behind DiagnostiX is something I gathered from the ground up, rather
 
 - **A Google Form survey** where everyday users described the problems they'd run into with their devices and what the fault eventually turned out to be.
 - **Inputs from nearby hardware shops, service centres and repair technicians**, who shared the symptom-to-fault patterns they deal with every day.
+- **Online problem reports** — common device issues that people post and discuss across the web, distilled into the same symptom-to-fault structure.
 
-Combining real user reports with hands-on repair experience is what makes the predictions feel grounded in how devices actually fail, instead of being made-up numbers.
+Combining real user reports, online complaints, and hands-on repair experience is what makes the predictions feel grounded in how devices actually fail, instead of being made-up numbers.
 
 A small honesty note: because the collected data is fairly clean and the symptom patterns map quite consistently onto faults, the model scores very high on paper. Real-world symptoms are messier and more ambiguous, so treat the prediction as a strong starting hint — not a final verdict.
 
