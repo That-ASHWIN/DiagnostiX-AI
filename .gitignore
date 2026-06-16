@@ -1,4 +1,7 @@
 __pycache__/
 *.py[cod]
 .streamlit/secrets.toml
-symptom_encoder.pkl
+
+# Generated at runtime / by train.py
+model.pkl
+confusion_matrix.png

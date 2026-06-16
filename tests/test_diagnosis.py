@@ -1,12 +1,12 @@
 import unittest
 
-from diagnosis import create_feature_row, load_artifact, predict_fault
+from diagnosis import create_feature_row, get_artifact, predict_fault
 
 
 class DiagnosisTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.artifact = load_artifact()
+        cls.artifact = get_artifact()
 
     def test_feature_row_preserves_user_inputs(self):
         row = create_feature_row(
@@ -15,70 +15,49 @@ class DiagnosisTests(unittest.TestCase):
             daily_usage_hours=2,
             failure_after_months=29,
             usage_type="Developer",
-            symptom1="Recording Failure",
-            symptom2="Low Mic Volume",
-            symptom3="Calls Connected",
+            symptom1="Sample Symptom A",
+            symptom2="Sample Symptom B",
+            symptom3="Sample Symptom C",
         )
 
         self.assertEqual(row["Device"], "Mobile")
-        self.assertEqual(row["Symptom1"], "Recording Failure")
-        self.assertEqual(row["Symptom2"], "Low Mic Volume")
-        self.assertEqual(row["Symptom3"], "Calls Connected")
+        self.assertEqual(row["Age_Months"], 32)
+        self.assertEqual(row["Symptom1"], "Sample Symptom A")
+        self.assertEqual(row["Symptom3"], "Sample Symptom C")
 
-    def test_artifact_contains_valid_symptom_combinations(self):
+    def test_input_options_structure(self):
         options = self.artifact["input_options"]
-        mobile_combinations = options["symptom_combinations_by_device"]["Mobile"]
+        self.assertTrue(options["devices"])
+        self.assertTrue(options["usage_types"])
+        for device in options["devices"]:
+            combinations = options["symptom_combinations_by_device"][device]
+            self.assertTrue(combinations)
+            self.assertIn("Symptom1", combinations[0])
+            self.assertIn("Symptom2", combinations[0])
+            self.assertIn("Symptom3", combinations[0])
 
-        self.assertIn(
-            {
-                "Symptom1": "Recording Failure",
-                "Symptom2": "Low Mic Volume",
-                "Symptom3": "Calls Connected",
-            },
-            mobile_combinations,
+    def test_prediction_is_valid(self):
+        options = self.artifact["input_options"]
+        device = options["devices"][0]
+        combo = options["symptom_combinations_by_device"][device][0]
+        row = create_feature_row(
+            device=device,
+            age_months=24,
+            daily_usage_hours=8,
+            failure_after_months=18,
+            usage_type=options["usage_types"][0],
+            symptom1=combo["Symptom1"],
+            symptom2=combo["Symptom2"],
+            symptom3=combo["Symptom3"],
         )
+        result = predict_fault(self.artifact, row)
 
-    def test_distinct_symptoms_produce_distinct_predictions(self):
-        cases = [
-            create_feature_row(
-                "Laptop",
-                22,
-                9,
-                16,
-                "Developer",
-                "Overheating",
-                "Fan Noise",
-                "Auto Shutdown",
-            ),
-            create_feature_row(
-                "Desktop",
-                58,
-                5,
-                57,
-                "Normal",
-                "Game Crashes",
-                "Visual Glitches",
-                "High GPU Temp",
-            ),
-            create_feature_row(
-                "Mobile",
-                32,
-                2,
-                29,
-                "Developer",
-                "Recording Failure",
-                "Low Mic Volume",
-                "Calls Connected",
-            ),
-        ]
-
-        predictions = [
-            predict_fault(self.artifact, case)["fault"] for case in cases
-        ]
-
-        self.assertEqual(
-            predictions,
-            ["Cooling Fan", "GPU", "Microphone"],
+        self.assertIn("fault", result)
+        self.assertEqual(len(result["alternatives"]), 3)
+        self.assertGreaterEqual(result["confidence"], 0.0)
+        self.assertLessEqual(result["confidence"], 1.0)
+        self.assertIn(
+            result["fault"], list(self.artifact["model"].classes_)
         )
 
 

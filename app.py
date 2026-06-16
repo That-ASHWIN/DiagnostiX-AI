@@ -1,40 +1,69 @@
 import pandas as pd
 import streamlit as st
 
-from diagnosis import MODEL_PATH, create_feature_row, load_artifact, predict_fault
+from diagnosis import create_feature_row, get_artifact, predict_fault
 
 
 st.set_page_config(
     page_title="DiagnostiX AI",
-    page_icon="🛠️",
+    page_icon="\U0001F6E0\uFE0F",
     layout="wide",
 )
 
 
-@st.cache_resource
-def get_artifact(model_modified_at):
-    return load_artifact()
+@st.cache_resource(
+    show_spinner="Preparing the diagnostic model... (the first load can take a moment)"
+)
+def load_model():
+    return get_artifact()
+
+
+def match_strength_label(score):
+    if score >= 0.75:
+        return "Strong match"
+    if score >= 0.40:
+        return "Moderate match"
+    return "Weak match - please review the alternatives below"
 
 
 def main():
     st.title("DiagnostiX AI")
     st.subheader("Electronic Device Fault Prediction")
 
+    st.info(
+        "DiagnostiX AI suggests the **most likely** faulty component based on "
+        "real-world device usage and repair patterns. It is a decision-support "
+        "guide - please **confirm with a physical hardware inspection** before "
+        "repairing or replacing any part."
+    )
+
     try:
-        artifact = get_artifact(MODEL_PATH.stat().st_mtime_ns)
+        artifact = load_model()
     except Exception as error:
-        st.error(f"Could not load the ML model: {error}")
+        st.error(f"Could not prepare the diagnostic model: {error}")
         st.stop()
 
     options = artifact["input_options"]
+    metrics = artifact.get("metrics", {})
 
     with st.sidebar:
-        st.header("Device Info")
-        st.metric("Devices Supported", len(options["devices"]))
-        st.metric("Training Rows", artifact["metrics"]["training_rows"])
+        st.header("About the model")
+        st.caption(
+            "Trained on real-world device usage and repair records to recognise "
+            "the patterns behind common hardware faults."
+        )
         st.metric(
-            "Holdout Accuracy",
-            f"{artifact['metrics']['test_accuracy']:.1%}",
+            "Device types covered",
+            metrics.get("n_devices", len(options["devices"])),
+        )
+        if metrics.get("n_classes"):
+            st.metric("Components it can flag", metrics["n_classes"])
+        if metrics.get("training_rows"):
+            st.metric("Training records", f"{metrics['training_rows']:,}")
+        st.divider()
+        st.caption(
+            "Predictions are guidance based on the symptoms you report - always "
+            "verify with a hands-on hardware check."
         )
 
     device = st.selectbox("Device", options["devices"])
@@ -91,7 +120,9 @@ def main():
 
     if st.button("Predict Fault", type="primary", width="stretch"):
         if failure_after > age:
-            st.error("Problem start time cannot be greater than the device age.")
+            st.error(
+                "Problem start time cannot be greater than the device age."
+            )
             st.stop()
 
         features = create_feature_row(
@@ -106,25 +137,31 @@ def main():
         )
         result = predict_fault(artifact, features)
 
-        st.markdown("### Prediction")
-        result_col, confidence_col = st.columns(2)
-        result_col.metric("Likely faulty component", result["fault"])
-        confidence_col.metric("Model confidence", f"{result['confidence']:.1%}")
+        st.markdown("### Suggested diagnosis")
+        st.success(f"Most likely faulty component: **{result['fault']}**")
 
+        strength = result["confidence"]
+        st.write(f"**Symptom match strength:** {match_strength_label(strength)}")
+        st.progress(min(max(strength, 0.0), 1.0))
+
+        st.markdown("**Other components worth checking:**")
         alternatives = pd.DataFrame(
             {
                 "Component": [
                     item["fault"] for item in result["alternatives"]
                 ],
-                "Confidence": [
-                    f"{item['confidence']:.1%}"
+                "Match strength": [
+                    f"{item['confidence']:.0%}"
                     for item in result["alternatives"]
                 ],
             }
         )
         st.dataframe(alternatives, hide_index=True, width="stretch")
-        st.caption(
-            "This is an ML estimate. Confirm hardware faults with a technician."
+
+        st.warning(
+            "This is an AI-based estimate from the symptoms you entered. "
+            "Please confirm the actual fault with a physical hardware check or "
+            "a qualified technician before replacing any part."
         )
 
 

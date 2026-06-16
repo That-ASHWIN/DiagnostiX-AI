@@ -6,7 +6,7 @@ import pandas as pd
 
 BASE_DIR = Path(__file__).resolve().parent
 MODEL_PATH = BASE_DIR / "model.pkl"
-EXPECTED_ARTIFACT_VERSION = 2
+EXPECTED_ARTIFACT_VERSION = 3
 
 
 def load_artifact(path=MODEL_PATH):
@@ -14,11 +14,32 @@ def load_artifact(path=MODEL_PATH):
         artifact = pickle.load(model_file)
 
     if not isinstance(artifact, dict):
-        raise ValueError("Legacy model detected. Run `python train.py` to rebuild it.")
+        raise ValueError(
+            "Legacy model detected. Run `python train.py` to rebuild it."
+        )
     if artifact.get("artifact_version") != EXPECTED_ARTIFACT_VERSION:
         raise ValueError("Unsupported model artifact. Run `python train.py`.")
 
     return artifact
+
+
+def get_artifact():
+    """Return a ready-to-use model artifact.
+
+    Loads the saved ``model.pkl`` when it exists and is compatible. Otherwise
+    it trains a fresh model directly from the dataset, so the app works on a
+    clean deploy without committing the (large) model file.
+    """
+    if MODEL_PATH.exists():
+        try:
+            return load_artifact()
+        except Exception:
+            # Incompatible or corrupt model - retrain from the dataset below.
+            pass
+
+    from train import train_and_save
+
+    return train_and_save()
 
 
 def create_feature_row(
