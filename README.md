@@ -4,11 +4,21 @@ Ever had a device just... stop working, and you had no clue *which part* actuall
 
 It's a small machine-learning web app: you tell it the device, how old it is, how you use it, and the symptoms you're seeing — and it points you to the hardware component most likely at fault, so you know where to start looking.
 
+### 🟢 Try it live — no install needed
+
+**👉 [Click here to open DiagnostiX AI](https://diagnostix-ai-njfwpebtagagkfmfkr8xsy.streamlit.app)**
+
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://diagnostix-ai-njfwpebtagagkfmfkr8xsy.streamlit.app)
+
+Just click the link, pick your device, enter the symptoms — and the model runs right in your browser.
+
 > ⚠️ **It's a guide, not a guarantee.** DiagnostiX shows you the most likely culprit. Always confirm with a real hardware check before replacing anything.
 
 ## 🔗 Live Demo
 
-> 🚧 **Not deployed yet.** DiagnostiX runs on Streamlit Community Cloud. Once you deploy it (see [Deploy](#️-deploy-on-streamlit-community-cloud) below), your live link goes right here — it'll look like `https://diagnostix-ai.streamlit.app`.
+**👉 [Launch DiagnostiX AI](https://diagnostix-ai-njfwpebtagagkfmfkr8xsy.streamlit.app)**
+
+Open the link above and the app loads straight in your browser — no setup, no install, nothing to download. Choose your device, enter three symptoms, and get an instant diagnosis.
 
 ## ✨ What it can do
 
