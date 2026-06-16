@@ -118,7 +118,7 @@ def main():
         )
         symptom3 = st.selectbox("Additional symptom", symptom3_options)
 
-    if st.button("Predict Fault", type="primary", width="stretch"):
+    if st.button("Predict Fault", type="primary", use_container_width=True):
         if failure_after > age:
             st.error(
                 "Problem start time cannot be greater than the device age."
@@ -156,7 +156,7 @@ def main():
                 ],
             }
         )
-        st.dataframe(alternatives, hide_index=True, width="stretch")
+        st.dataframe(alternatives, hide_index=True, use_container_width=True)
 
         st.warning(
             "This is an AI-based estimate from the symptoms you entered. "
