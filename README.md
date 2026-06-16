@@ -8,8 +8,7 @@ It's a small machine-learning web app: you tell it the device, how old it is, ho
 
 ## 🔗 Live Demo
 
-👉 *Coming soon — I'll drop the link here once it's deployed.*
-`https://<your-app>.streamlit.app`
+> 🚧 **Not deployed yet.** DiagnostiX runs on Streamlit Community Cloud. Once you deploy it (see [Deploy](#️-deploy-on-streamlit-community-cloud) below), your live link goes right here — it'll look like `https://diagnostix-ai.streamlit.app`.
 
 ## ✨ What it can do
 
