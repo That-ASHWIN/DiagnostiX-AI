@@ -2,6 +2,7 @@ import pandas as pd
 import streamlit as st
 
 from diagnosis import create_feature_row, get_artifact, predict_diagnosis
+from report import build_report_pdf
 
 
 st.set_page_config(
@@ -24,6 +25,61 @@ def match_strength_label(score):
     if score >= 0.40:
         return "Moderate match"
     return "Weak match - please review the alternatives below"
+
+
+def render_result(result, inputs):
+    st.markdown("### Suggested diagnosis")
+    st.success(f"Most likely faulty component: **{result['fault']}**")
+
+    summary_cols = st.columns(3)
+    summary_cols[0].metric("Severity", result["severity"])
+    summary_cols[1].metric(
+        "Est. repair cost", f"Rs {result['estimated_cost_inr']:,.0f}"
+    )
+    summary_cols[2].metric(
+        "Est. repair time", f"{result['estimated_time_hours']:.1f} hrs"
+    )
+
+    strength = result["confidence"]
+    st.write(f"**Symptom match strength:** {match_strength_label(strength)}")
+    st.progress(min(max(strength, 0.0), 1.0))
+
+    if result.get("solution_steps"):
+        st.markdown("**Recommended solution:**")
+        for step_number, step in enumerate(result["solution_steps"], start=1):
+            st.markdown(f"{step_number}. {step}")
+    elif result.get("solution_text"):
+        st.markdown("**Recommended solution:**")
+        st.write(result["solution_text"])
+
+    st.markdown("**Other components worth checking:**")
+    alternatives = pd.DataFrame(
+        {
+            "Component": [item["fault"] for item in result["alternatives"]],
+            "Match strength": [
+                f"{item['confidence']:.0%}" for item in result["alternatives"]
+            ],
+        }
+    )
+    st.dataframe(alternatives, hide_index=True, use_container_width=True)
+
+    st.warning(
+        "This is an AI-based estimate from the symptoms you entered. "
+        "Please confirm the actual fault with a physical hardware check or "
+        "a qualified technician before replacing any part."
+    )
+
+    try:
+        pdf_bytes = build_report_pdf(inputs, result)
+        st.download_button(
+            "\U0001F4C4  Download report (PDF)",
+            data=pdf_bytes,
+            file_name="DiagnostiX_AI_report.pdf",
+            mime="application/pdf",
+            use_container_width=True,
+        )
+    except Exception as error:
+        st.caption(f"PDF report could not be generated: {error}")
 
 
 def main():
@@ -151,51 +207,25 @@ def main():
             symptom2=symptom2,
             symptom3=symptom3,
         )
-        result = predict_diagnosis(artifact, features)
-
-        st.markdown("### Suggested diagnosis")
-        st.success(f"Most likely faulty component: **{result['fault']}**")
-
-        summary_cols = st.columns(3)
-        summary_cols[0].metric("Severity", result["severity"])
-        summary_cols[1].metric(
-            "Est. repair cost", f"Rs {result['estimated_cost_inr']:,.0f}"
+        st.session_state["diagnosis_result"] = predict_diagnosis(
+            artifact, features
         )
-        summary_cols[2].metric(
-            "Est. repair time", f"{result['estimated_time_hours']:.1f} hrs"
-        )
+        st.session_state["diagnosis_inputs"] = {
+            "Device": device,
+            "Brand": brand,
+            "Device age (months)": age,
+            "Daily usage (hours)": usage,
+            "Problem started after (months)": failure_after,
+            "Usage type": usage_type,
+            "Primary symptom": symptom1,
+            "Secondary symptom": symptom2,
+            "Additional symptom": symptom3,
+        }
 
-        strength = result["confidence"]
-        st.write(f"**Symptom match strength:** {match_strength_label(strength)}")
-        st.progress(min(max(strength, 0.0), 1.0))
-
-        if result.get("solution_steps"):
-            st.markdown("**Recommended solution:**")
-            for step_number, step in enumerate(result["solution_steps"], start=1):
-                st.markdown(f"{step_number}. {step}")
-        elif result.get("solution_text"):
-            st.markdown("**Recommended solution:**")
-            st.write(result["solution_text"])
-
-        st.markdown("**Other components worth checking:**")
-        alternatives = pd.DataFrame(
-            {
-                "Component": [
-                    item["fault"] for item in result["alternatives"]
-                ],
-                "Match strength": [
-                    f"{item['confidence']:.0%}"
-                    for item in result["alternatives"]
-                ],
-            }
-        )
-        st.dataframe(alternatives, hide_index=True, use_container_width=True)
-
-        st.warning(
-            "This is an AI-based estimate from the symptoms you entered. "
-            "Please confirm the actual fault with a physical hardware check or "
-            "a qualified technician before replacing any part."
-        )
+    result = st.session_state.get("diagnosis_result")
+    inputs = st.session_state.get("diagnosis_inputs")
+    if result and inputs:
+        render_result(result, inputs)
 
 
 if __name__ == "__main__":
