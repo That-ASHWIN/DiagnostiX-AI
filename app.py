@@ -1,7 +1,7 @@
 import pandas as pd
 import streamlit as st
 
-from diagnosis import create_feature_row, get_artifact, predict_fault
+from diagnosis import create_feature_row, get_artifact, predict_diagnosis
 
 
 st.set_page_config(
@@ -31,9 +31,10 @@ def main():
     st.subheader("Electronic Device Fault Prediction")
 
     st.info(
-        "DiagnostiX AI suggests the **most likely** faulty component based on "
-        "real-world device usage and repair patterns. It is a decision-support "
-        "guide - please **confirm with a physical hardware inspection** before "
+        "DiagnostiX AI suggests the **most likely** faulty component, its "
+        "severity, and an estimated repair cost and time based on real-world "
+        "device usage and repair patterns. It is a decision-support guide - "
+        "please **confirm with a physical hardware inspection** before "
         "repairing or replacing any part."
     )
 
@@ -56,10 +57,20 @@ def main():
             "Device types covered",
             metrics.get("n_devices", len(options["devices"])),
         )
-        if metrics.get("n_classes"):
-            st.metric("Components it can flag", metrics["n_classes"])
+        if metrics.get("n_brands"):
+            st.metric("Brands covered", metrics["n_brands"])
+        if metrics.get("n_components"):
+            st.metric("Components it can flag", metrics["n_components"])
         if metrics.get("training_rows"):
             st.metric("Training records", f"{metrics['training_rows']:,}")
+        if metrics.get("fault_accuracy") is not None:
+            st.divider()
+            st.caption("Held-out test performance")
+            st.metric("Component accuracy", f"{metrics['fault_accuracy']:.0%}")
+            if metrics.get("severity_accuracy") is not None:
+                st.metric(
+                    "Severity accuracy", f"{metrics['severity_accuracy']:.0%}"
+                )
         st.divider()
         st.caption(
             "Predictions are guidance based on the symptoms you report - always "
@@ -67,10 +78,14 @@ def main():
         )
 
     device = st.selectbox("Device", options["devices"])
+    brand_options = options.get("brands_by_device", {}).get(
+        device, options["brands"]
+    )
     symptom_combinations = options["symptom_combinations_by_device"][device]
 
     details_col, usage_col = st.columns(2)
     with details_col:
+        brand = st.selectbox("Brand", brand_options)
         age = st.number_input(
             "Device age (months)",
             min_value=1,
@@ -127,6 +142,7 @@ def main():
 
         features = create_feature_row(
             device=device,
+            brand=brand,
             age_months=age,
             daily_usage_hours=usage,
             failure_after_months=failure_after,
@@ -135,14 +151,31 @@ def main():
             symptom2=symptom2,
             symptom3=symptom3,
         )
-        result = predict_fault(artifact, features)
+        result = predict_diagnosis(artifact, features)
 
         st.markdown("### Suggested diagnosis")
         st.success(f"Most likely faulty component: **{result['fault']}**")
 
+        summary_cols = st.columns(3)
+        summary_cols[0].metric("Severity", result["severity"])
+        summary_cols[1].metric(
+            "Est. repair cost", f"Rs {result['estimated_cost_inr']:,.0f}"
+        )
+        summary_cols[2].metric(
+            "Est. repair time", f"{result['estimated_time_hours']:.1f} hrs"
+        )
+
         strength = result["confidence"]
         st.write(f"**Symptom match strength:** {match_strength_label(strength)}")
         st.progress(min(max(strength, 0.0), 1.0))
+
+        if result.get("solution_steps"):
+            st.markdown("**Recommended solution:**")
+            for step_number, step in enumerate(result["solution_steps"], start=1):
+                st.markdown(f"{step_number}. {step}")
+        elif result.get("solution_text"):
+            st.markdown("**Recommended solution:**")
+            st.write(result["solution_text"])
 
         st.markdown("**Other components worth checking:**")
         alternatives = pd.DataFrame(

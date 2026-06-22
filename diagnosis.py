@@ -1,12 +1,13 @@
 from pathlib import Path
 import pickle
+import re
 
 import pandas as pd
 
 
 BASE_DIR = Path(__file__).resolve().parent
 MODEL_PATH = BASE_DIR / "model.pkl"
-EXPECTED_ARTIFACT_VERSION = 3
+EXPECTED_ARTIFACT_VERSION = 4
 
 
 def load_artifact(path=MODEL_PATH):
@@ -34,7 +35,6 @@ def get_artifact():
         try:
             return load_artifact()
         except Exception:
-            # Incompatible or corrupt model - retrain from the dataset below.
             pass
 
     from train import train_and_save
@@ -44,6 +44,7 @@ def get_artifact():
 
 def create_feature_row(
     device,
+    brand,
     age_months,
     daily_usage_hours,
     failure_after_months,
@@ -54,6 +55,7 @@ def create_feature_row(
 ):
     return {
         "Device": device,
+        "Brand": brand,
         "Age_Months": age_months,
         "Daily_Usage_Hours": daily_usage_hours,
         "Failure_After_Months": failure_after_months,
@@ -64,7 +66,33 @@ def create_feature_row(
     }
 
 
-def predict_fault(artifact, features, top_k=3):
+def split_solution_steps(solution_text):
+    """Turn a 'Step 1: ...; Step 2: ...' string into a clean list of steps."""
+    if not solution_text:
+        return []
+    parts = re.split(r";\s*", str(solution_text))
+    steps = []
+    for part in parts:
+        cleaned = re.sub(r"^\s*Step\s*\d+\s*:\s*", "", part).strip()
+        if cleaned:
+            steps.append(cleaned)
+    return steps
+
+
+def _rank_classes(model, sample, top_k):
+    probabilities = model.predict_proba(sample)[0]
+    ranked_indexes = probabilities.argsort()[::-1][:top_k]
+    return [
+        {
+            "label": str(model.classes_[index]),
+            "confidence": float(probabilities[index]),
+        }
+        for index in ranked_indexes
+    ]
+
+
+def predict_diagnosis(artifact, features, top_k=3):
+    """Predict component, severity, cost, time and the recommended solution."""
     feature_columns = artifact["feature_columns"]
     missing = [column for column in feature_columns if column not in features]
     if missing:
@@ -74,20 +102,34 @@ def predict_fault(artifact, features, top_k=3):
         [{column: features[column] for column in feature_columns}],
         columns=feature_columns,
     )
-    model = artifact["model"]
-    predicted_fault = str(model.predict(sample)[0])
-    probabilities = model.predict_proba(sample)[0]
-    ranked_indexes = probabilities.argsort()[::-1][:top_k]
-    ranking = [
-        {
-            "fault": str(model.classes_[index]),
-            "confidence": float(probabilities[index]),
-        }
-        for index in ranked_indexes
-    ]
+
+    fault_ranking = _rank_classes(artifact["fault_model"], sample, top_k)
+    fault = fault_ranking[0]["label"]
+
+    severity_ranking = _rank_classes(artifact["severity_model"], sample, top_k=3)
+    severity = severity_ranking[0]["label"]
+
+    estimated_cost = float(artifact["cost_model"].predict(sample)[0])
+    estimated_time = float(artifact["time_model"].predict(sample)[0])
+
+    solution_text = artifact.get("component_to_solution", {}).get(fault, "")
 
     return {
-        "fault": predicted_fault,
-        "confidence": ranking[0]["confidence"],
-        "alternatives": ranking,
+        "fault": fault,
+        "confidence": fault_ranking[0]["confidence"],
+        "alternatives": [
+            {"fault": item["label"], "confidence": item["confidence"]}
+            for item in fault_ranking
+        ],
+        "severity": severity,
+        "severity_confidence": severity_ranking[0]["confidence"],
+        "estimated_cost_inr": estimated_cost,
+        "estimated_time_hours": estimated_time,
+        "solution_text": solution_text,
+        "solution_steps": split_solution_steps(solution_text),
     }
+
+
+# Backwards-compatible alias for older callers.
+def predict_fault(artifact, features, top_k=3):
+    return predict_diagnosis(artifact, features, top_k=top_k)
